@@ -1,0 +1,217 @@
+/* 
+    ========
+    = MISC =
+    ========       
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    hyphens: auto;
+    font: 16px/1.5 'Red Hat Display', sans-serif;
+}
+
+:root {
+    --mobile: 375px;
+    --desktop: 1440px;
+    --p-pale-blue: hsl(225, 100%, 94%);
+    --p-bright-blue: hsl(245, 75%, 52%);
+    --n-pale-blue: hsl(225, 100%, 98%);
+    --n-desaturated-blue: hsl(224, 23%, 55%);
+    --n-dark-blue: hsl(223, 47%, 23%);
+    --medium: 500;
+    --bold: 700;
+    --black: 900;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--p-pale-blue) url("../images/pattern-background-mobile.svg") no-repeat;
+    height: 100vh;
+}
+
+@media (min-width: 376px) {
+    html,
+    body {
+        background: var(--p-pale-blue) url("../images/pattern-background-desktop.svg") no-repeat;
+        background-size: contain;
+    }
+}
+
+.container {
+    max-width: var(--desktop);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+}
+
+/* 
+    =================
+    = Service Card  =
+    =================
+*/
+
+.card {
+    background-color: #FFFFFF;
+    width: 20.5em;
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 2fr;
+    border-radius: 1em;
+    overflow: auto;
+    padding: 0;
+    box-shadow: 0px 20px 24px 1px hsl(0deg 0% 82%);
+}
+
+@media (min-width: 376px) {
+    .card {
+        width: 23.5em;
+        grid-template-rows: 1fr 2fr;
+    }
+}
+
+
+/* Hero image */
+.hero {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 1em 1em 0 0;
+}
+
+
+/* Main Section */
+main {
+    padding: 2em 1.6em;
+    text-align: center;
+}
+
+@media (min-width: 376px) {
+    main {
+        padding: 2em 2em;
+        text-align: center;
+    }
+}
+
+main h1 {
+    font-size: 1.5rem;
+    font-weight: var(--black);
+    color: var(--n-dark-blue);
+    margin-top: 0;
+    margin-bottom: .4em;
+}
+
+main p {
+    font-size: .9rem;
+    font-weight: var(--medium);
+    color: var(--n-desaturated-blue);
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+/* Change Plan Section */
+.plan {
+    display: flex;
+    background-color: var(--n-pale-blue);
+    padding: 1em 1em;
+    margin: 1.5em 0;
+    border-radius: 0.5em;
+}
+
+.plan__icon {
+    width: 50%;
+}
+
+@media (min-width: 376px) {
+    .plan__icon {
+        width: 35%;
+        margin-top: .3em;
+    }
+}
+
+.plan__icon img {
+    width: 100%;
+    height: auto;
+}
+
+.plan__value {
+    width: 100%;
+    margin-left: .7em;
+}
+
+.plan__value p:nth-child(1) {
+    font-size: .9rem;
+    color: var(--n-dark-blue);
+    font-weight: var(--bold);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.plan__change {
+    display: block;
+    width: 80%;
+    padding: .8em 0;
+    margin-left: 1em;
+    text-align: right;
+    font-size: .9rem;
+    color: var(--p-bright-blue);
+}
+
+@media (min-width: 376px) {
+    .plan__change {
+        margin-left: 2em;
+    }
+}
+
+.plan__change:hover {
+    opacity: .8;
+    text-decoration: none;
+}
+
+
+/* Buttons */
+.payment--btn {
+    display: block;
+    background-color: var(--p-bright-blue);
+    padding: 0.65em 0;
+    margin-bottom: 1.4em;
+    border-radius: 0.5rem;
+    font-size: .9rem;
+    color: var(--n-pale-blue);
+    font-weight: var(--bold);
+    text-decoration: none;
+    box-shadow: 0px 16px 20px 1px hsl(224deg 38% 78%);
+}
+
+.payment--btn:hover {
+    opacity: .7;
+}
+
+.cancel--btn {
+    display: block;
+    font-size: .9rem;
+    text-decoration: none;
+    color: var(--n-desaturated-blue);
+    font-weight: var(--bold);
+    margin-top: 2em;
+}
+
+.cancel--btn:hover {
+    color: var(--n-dark-blue);
+}
